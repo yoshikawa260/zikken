@@ -4,3 +4,6 @@ spring:
     url: jdbc:postgresql://localhost:5432/Zikken
     username: ${DB_USER:postgres}
     password: ${DB_PASS:postgres}
+    initialization-mode: always
+    schema: classpath:schema.sql
+    data: classpath:data.sql
