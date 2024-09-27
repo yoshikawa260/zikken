@@ -5,9 +5,9 @@
 </head>
 <body>
     <h1>年齢計算機</h1>
-    <form action="#" th:action="@{/calculate-age}" th:object="${age}" method="post">
+    <form action="#" th:action="@{/calculate-age}" method="post">
         <label for="birthday">誕生日を入力してください (YYYY-MM-DD):</label>
-        <input type="text" id="birthday" name="birthday" th:field="*{birthday}" />
+        <input type="text" id="birthday" name="birthday" />
         <button type="submit">計算</button>
     </form>
     <div th:if="${age != null}">

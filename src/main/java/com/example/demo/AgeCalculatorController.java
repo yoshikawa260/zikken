@@ -13,8 +13,9 @@ import java.time.Period;
 public class AgeCalculatorController {
 
     @GetMapping("/age-calculator")
-    public String showAgeCalculatorForm() {
-        return "ageCalculator";
+    public String showAgeCalculatorForm(Model model) {
+        model.addAttribute("age", null); // 初期値として null を設定
+        return "ageCalculator"; // フォームを表示
     }
 
     @PostMapping("/calculate-age")
@@ -22,7 +23,7 @@ public class AgeCalculatorController {
         LocalDate birthDate = LocalDate.parse(birthday);
         LocalDate currentDate = LocalDate.now();
         int age = Period.between(birthDate, currentDate).getYears();
-        model.addAttribute("age", age);
-        return "ageCalculator";
+        model.addAttribute("age", age); // 計算した年齢をモデルに追加
+        return "ageCalculator"; // 同じテンプレートを表示
     }
 }
