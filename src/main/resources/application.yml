@@ -1,11 +1,2 @@
-spring:
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/Zikken
-    username: ${DB_USER:postgres}
-    password: ${DB_PASS:postgres}
-    schema: classpath:schema.sql
-    data: classpath:data.sql
-  sql:
-    init:
-      mode: always
+
+
